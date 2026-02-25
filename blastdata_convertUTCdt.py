@@ -23,7 +23,7 @@ quarrydata_path = '/Users/vjs/research/treeslandslides/data/quarryblasts/blastda
 local2utc_DST_dt = 7  # daylight savings
 local2utc_ST_dt = 8  # normal savings
 
-## daylight savings time date in 2024 during array installation
+## daylight savings time date in 2024 during array installation - 2025 was during it
 DST_date = dt.datetime(2024,11,3)
 
 
@@ -42,8 +42,9 @@ blastdf = blastdf_raw.copy()
 
 ## Convert each row if it is before or after daylight savings day this year
 for index,row in blastdf_raw.iterrows():
-    if row['LocalDateTime'] > DST_date:
+    if (row['LocalDateTime'] > DST_date) & (row['LocalDateTime'].year ==2024):
         print('out of DST')
+        print(row)
         blastdf.at[index,'UTCDateTime'] = blastdf_raw.loc[index]['LocalDateTime'] + pd.Timedelta(hours=local2utc_ST_dt)
     else:
         blastdf.at[index,'UTCDateTime'] = blastdf_raw.loc[index]['LocalDateTime'] + pd.Timedelta(hours=local2utc_DST_dt)
