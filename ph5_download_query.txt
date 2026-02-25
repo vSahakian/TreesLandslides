@@ -1,0 +1,38 @@
+# Data request for MacDonald Dunn data
+
+## 1.  
+http://service.iris.edu/ph5ws/dataselect/1/query?reqtype=fdsn&format=mseed&network=8M&channel=DP*&starttime=2024-10-29T00:00:00&endtime=2024-11-25T23:59:59&station=*&nodata=404
+
+----
+Gave:
+
+Error 404: Request resulted in no data being returned.
+
+More Details:
+handler exited, code: 2  reason: No Content
+
+Request:
+http://service.iris.edu/ph5ws/dataselect/1/query?reqtype=fdsn&format=mseed&network=8M&channel=DP*&starttime=2024-10-29T00:00:00&endtime=2024-11-25T23:59:59&station=*&nodata=404
+
+Request Submitted:
+2025/03/07 21:36:14 UTC
+
+Service version:
+Service: ph5ws-dataselect  version: 1.2.1
+
+## 2.
+
+service/
+
+http://service.iris.edu/ph5ws/dataselect/1/queryauth?reqtype=fdsn&format=mseed&network=8M&channel=DP*&starttime=2024-10-29T00:00:00&endtime=2024-11-25T23:59:59&station=*&nodata=404
+
+
+http://service.iris.edu/ph5ws/dataselect/1/queryauth?reqtype=fdsn&format=mseed&network=8M&channel=DP*&starttime=2024-10-29T00:00:00&endtime=2024-10-29T23:59:59&station=*&nodata=404
+
+
+
+curl -L --digest --user vjs@uoregon.edu:5Q7VFRu9b7RTiHUm -o data.mseed 'https://service.iris.edu/ph5ws/dataselect/1/queryauthataselect/1/queryauth?reqtype=fdsn&format=mseed&network=8M&channel=DP*&starttime=2024-10-29T00:00:00&endtime=2024-10-29T23:59:59&station=101&nodata=404'
+
+
+
+
